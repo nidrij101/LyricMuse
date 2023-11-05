@@ -49,6 +49,9 @@ def home():
             session["lyrics"] = []
 
         session["lyrics"].append(formatted_song)
+    elif request.method == "GET":
+        # Clear generated lyrics when opening the website
+        session["lyrics"] = []
 
     return render_template("index.html", lyrics=session.get("lyrics", []))
 
