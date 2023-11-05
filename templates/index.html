@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyrics Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+        #lyrics-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lyrics Generator</h1>
+    <form method="post">
+        <label for="prompt1">First word/phrase:</label>
+        <input type="text" name="prompt1" required>
+        <label for="prompt2">Second word/phrase:</label>
+        <input type="text" name="prompt2" required>
+        <label for="prompt3">Third word/phrase:</label>
+        <input type="text" name="prompt3" required>
+        <button type="submit">Generate Lyrics</button>
+    </form>
+    
+    <div id="lyrics-container">
+        <h2>Generated Lyrics:</h2>
+        {% for lyric in lyrics %}
+            <pre>{{ lyric }}</pre>
+        {% endfor %}
+    </div>
+</body>
+</html>
